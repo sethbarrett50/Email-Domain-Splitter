@@ -6,7 +6,6 @@ Final Programming Project
 Final Project Scripting-Seth Barrett.py
 
 
-I apologize for not turning in the project proposal.
 My project is an email domain sorter.
 It takes a text file full of email addresses followed by a colon and a password, and searches through it to seperate emails by domain.
 It does this by using regular expressions to identify email addresses, their domains, and the password.
