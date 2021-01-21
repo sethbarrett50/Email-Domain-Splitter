@@ -71,8 +71,8 @@ for groups in fullogRegex.findall(text):
     domfile.write(f'{groups[0]}\n')
     domfile.close()
 for domain in domains:
-      bigzip.write(fn, compress_type=zipfile.ZIP_DEFLATED)
-      os.remove(fn)
+      bigzip.write(domain, compress_type=zipfile.ZIP_DEFLATED)
+      os.remove(domain)
       bigzip.close()
 '''
 -----------------------------------------------------------------------
