@@ -64,7 +64,7 @@ bigzip = zipfile.ZipFile('BigZip.zip', 'w')
 domains = []
 for groups in fullogRegex.findall(text):
     potdomain = groups[1]
-    domfilename = str(potdomain + '.txt')
+    domfilename = str(potdomain.lower() + '.txt')
     if(domfilename not in domains):
         domains.append(domfilename)
     domfile = open(domfilename, 'w')
@@ -74,12 +74,6 @@ for domain in domains:
       bigzip.write(domain, compress_type=zipfile.ZIP_DEFLATED)
       os.remove(domain)
 bigzip.close()
-'''
------------------------------------------------------------------------
-Create text file for each domain and put in zipfile
------------------------------------------------------------------------
-'''
-'''
 -----------------------------------------------------------------------
 Exit Message
 -----------------------------------------------------------------------
