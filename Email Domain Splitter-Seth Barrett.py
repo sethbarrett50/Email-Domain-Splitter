@@ -3,7 +3,7 @@ Created by Seth Barrett
 AIST 2120-Scripting and Automation with Professor York
 Email Domain Splitter
 11/15/2020
-Final Project Scripting-Seth Barrett.py
+Email Domain Splitter-Seth Barrett.py
 
 
 My project is an email domain sorter.
@@ -47,18 +47,12 @@ Regular Expressions
 -----------------------------------------------------------------------
 '''
 print(f'{"Checking For Email Domains":-^60}')
-emailRegex = re.compile(r'''(
-    [a-zA-Z0-9._%+-]+
+fullogRegex = re.compile(r'''( #Group 0 for capturing email, colon and password
+    [a-zA-Z0-9._%+-]+ 
     @
-    ([a-zA-Z0-9-]+)  #Group 1 used for domains
+    ([a-zA-Z0-9-]+) #Group 1 Used for capturing the domain
     \.[a-zA-Z]{2,4}
-    )''',re.VERBOSE | re.IGNORECASE)
-fullogRegex = re.compile(r'''(
-    [a-zA-Z0-9._%+-]+
-    @
-    ([a-zA-Z0-9-]+)
-    \.[a-zA-Z]{2,4}
-    \:\w+           #For capturing password
+    \:\w+           
     )''',re.VERBOSE | re.IGNORECASE)
 '''
 -----------------------------------------------------------------------
@@ -67,7 +61,7 @@ Create tuple for each domain
 -----------------------------------------------------------------------
 '''
 domains = []
-for groups in emailRegex.findall(text):
+for groups in fullogRegex.findall(text):
     potdomain = groups[1]
     if(potdomain not in domains):
         domains.append(potdomain)
