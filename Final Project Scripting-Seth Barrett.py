@@ -1,7 +1,7 @@
 '''
 Created by Seth Barrett
 AIST 2120-Scripting and Automation with Professor York
-Final Programming Project
+Email Domain Splitter
 11/15/2020
 Final Project Scripting-Seth Barrett.py
 
