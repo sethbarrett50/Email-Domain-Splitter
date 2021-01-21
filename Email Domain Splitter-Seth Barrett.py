@@ -60,33 +60,20 @@ Group 1 is the domain of email
 Create tuple for each domain
 -----------------------------------------------------------------------
 '''
+bigzip = zipfile.ZipFile('BigZip.zip', 'w')
 domains = []
 for groups in fullogRegex.findall(text):
     potdomain = groups[1]
-    if(potdomain not in domains):
-        domains.append(potdomain)
-'''
------------------------------------------------------------------------
-Create text file for each domain and put in zipfile
------------------------------------------------------------------------
-'''
-bigzip = zipfile.ZipFile('BigZip.zip', 'w')
-if len(domains) > 0:
-    print(f'{"Domains Found & Adding To Text Files":-^60}')
-    for string in domains:
-        domfilename = str(string + '.txt')
-        domfile = open(domfilename, 'w')
-        for groups in fullogRegex.findall(text):
-            if(groups[1].lower() == string):
-                domfile.write(f'{groups[0]}\n')
-        domfile.close()
-        bigzip.write(domfilename, compress_type=zipfile.ZIP_DEFLATED)
-        os.remove(domfilename)
-    print(f'{"Text Files Added To Zip File":-^60}\n{"Zip File Created, Filled & Named BigZip.zip":-^60}')
-    bigzip.close()
-else:
-    print(f'{"No Email Domains Found":-^60}')
-'''
+    domfilename = str(potdomain.lower() + '.txt')
+    if(domfilename not in domains):
+        domains.append(domfilename)
+    domfile = open(domfilename, 'w')
+    domfile.write(f'{groups[0]}\n')
+    domfile.close()
+for domain in domains:
+      bigzip.write(domain, compress_type=zipfile.ZIP_DEFLATED)
+      os.remove(domain)
+bigzip.close()
 -----------------------------------------------------------------------
 Exit Message
 -----------------------------------------------------------------------
