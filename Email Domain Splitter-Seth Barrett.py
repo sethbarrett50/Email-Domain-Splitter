@@ -73,7 +73,7 @@ for groups in fullogRegex.findall(text):
 for domain in domains:
       bigzip.write(domain, compress_type=zipfile.ZIP_DEFLATED)
       os.remove(domain)
-      bigzip.close()
+bigzip.close()
 '''
 -----------------------------------------------------------------------
 Create text file for each domain and put in zipfile
