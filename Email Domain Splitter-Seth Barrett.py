@@ -1,6 +1,5 @@
 '''
 Created by Seth Barrett
-AIST 2120-Scripting and Automation with Professor York
 Email Domain Splitter
 11/15/2020
 Email Domain Splitter-Seth Barrett.py
