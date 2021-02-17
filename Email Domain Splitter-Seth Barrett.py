@@ -55,8 +55,7 @@ fullogRegex = re.compile(r'''( #Group 0 for capturing email, colon and password
     )''',re.VERBOSE | re.IGNORECASE)
 '''
 -----------------------------------------------------------------------
-Group 1 is the domain of email
-Create tuple for each domain
+Create tuple with each domain and add to zip file
 -----------------------------------------------------------------------
 '''
 bigzip = zipfile.ZipFile('BigZip.zip', 'w')
