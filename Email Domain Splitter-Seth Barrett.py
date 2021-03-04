@@ -21,24 +21,32 @@ import re, os, zipfile
 Opening Message
 -----------------------------------------------------------------------
 '''
-print(f'\n{"":-^60}\n{"Final Programming Project":-^60}\n{"Email Domain Sorter":-^60}\n{"Created by Seth Barrett":-^60}\n{"AIST 2120":-^60}\n{"":-^60}\n')
+print(f'\n{"":-^60}\n{"Final Programming Project":-^60}\n{"Email Domain Sorter":-^60}\n{"Created by Seth Barrett":-^60}\n{"AIST 2120":-^60}\n{"":-^60}')
 '''
 -----------------------------------------------------------------------
 Show Current Working Directory, Ask for Input and Open Input file
 -----------------------------------------------------------------------
 '''
-print(f'Current Working Directory:{os.getcwd()}')
-files = [ f for f in os.listdir( os.curdir ) if os.path.isfile(f) ]
-for file in files:
-    print(f'{"-"*5}{file}')
-lgfile = open(str(input('''Please choose the text file you wish to open:''')+'.txt'), 'r')
+boolUI = False
+ufile = ''
+while not boolUI:
+    print(f'{"":-^60}\nCurrent Working Directory:{os.getcwd()}')
+    files = [ f for f in os.listdir( os.curdir ) if os.path.isfile(f) ]
+    for file in files:
+        print(f'{"-"*5}{file}')
+    uifile = str(input('Please type the name of the text file you wish to open:'))
+    if uifile in files:
+        ufile = open(uifile, 'r')
+        boolUI = True
+        break
+    print(f'\n{"":-^60}Type a correct file\'s name.\n{"":-^60}')
 '''
 -----------------------------------------------------------------------
 Read text from file, save it, and close file
 -----------------------------------------------------------------------
 '''
-text = lgfile.read()
-lgfile.close()
+text = ufile.read()
+ufile.close()
 print(f'\n{"Text Copied":-^60}')
 '''
 -----------------------------------------------------------------------
@@ -77,6 +85,6 @@ bigzip.close()
 Exit Message
 -----------------------------------------------------------------------
 '''
-print(f'\n\n{"":-^60}\n{"End of Final Project":-^60}\n{"":-^60}')
+print(f'\n{"":-^60}\n{"End of Final Project":-^60}\n{"":-^60}')
 
 
