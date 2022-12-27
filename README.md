@@ -1,8 +1,9 @@
-# Email-Domain-Splitter
-This project takes a text file full of email addresses followed by a colon and a password, and searches through it to seperate emails by domain.
-It does this by using regular expressions to identify email addresses, their domains, and the password.
-It then sorts the emails and their associated passwords into separate text files named after the email’s domain, with all the emails of the same domain being sent to the same text file.
-It then sends the output text files into a new zip file.
+# Email Domain Splitter
 
-I'm want to better parse user input on the text file name as well as having a way for the user to name the zip file created.
-I hope to come back and improve on my work, but this works very nice right now.
+Welcome to the repository for our Email Domain Splitter program.
+
+This program takes a text file containing a list of email addresses, each followed by a colon and a password. It uses regular expressions to identify the email addresses, their domains, and the passwords, and then sorts the emails and passwords into separate text files based on the domain. All the emails of the same domain are sent to the same text file, and the output text files are then zipped into a single archive.
+
+We are currently working on improving the user input parsing for the text file name and adding the ability for the user to specify the name of the resulting zip file. We hope to continue improving this program in the future.
+
+Thank you for your interest in our project.
